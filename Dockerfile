@@ -21,6 +21,12 @@ RUN npm install -g vite
 # Clone the repository
 RUN git clone https://github.com/bazzofx/bugwitcher.git /app
 
+# Create a low-privilege user 'goku'
+RUN useradd -ms /bin/bash goku
+
+# Give ownership of app folder to 'goku'
+RUN chown -R goku:goku /app
+
 # Set working directory
 WORKDIR /app
 
@@ -34,9 +40,8 @@ ENV ABUSEIPDB_API_KEY=${API_KEY}
 RUN echo "ABUSEIPDB_API_KEY=${API_KEY}" > .env.local
 
 # Expose necessary ports
-EXPOSE 3001
+EXPOSE 3020
 
-# Define startup script to start both Nginx and the app
-COPY dist/ /usr/share/nginx/html
-EXPOSE 3001
-CMD ["nginx", "-g", "daemon off;"]
+# Deploy App
+RUN npm run build
+RUN npm run preview
