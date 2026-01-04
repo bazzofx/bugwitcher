@@ -1,5 +1,5 @@
 {
-  "name": "Bug Witcher AI - V1.5",
+  "name": "Bug Witcher AI - V1.0",
   "description": "An advanced static code analysis tool that uses DeepSeek AI to map out the data-flow, dependencies, and interactions within your JavaScript and HTML files, visualized as an interactive force-directed graph.",
   "requestFramePermissions": []
 }

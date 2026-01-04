@@ -2,7 +2,7 @@
 import { GraphData, FileData } from "../types";
 
 
-const DEEPSEEK_API_KEY = process.env.API_KEY
+const DEEPSEEK_API_KEY = import.meta.env.VITE_DEEPSEEK_API_KEY
 const SECURITY_PROMPT = `
 You are an expert web security analyst, static analysis engine, and data-flow modeling system.
 
