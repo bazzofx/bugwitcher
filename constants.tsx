@@ -2,13 +2,13 @@
 import React from 'react';
 
 export const NODE_COLORS: Record<string, string> = {
-  function: '#60a5fa',   // Blue
-  variable: '#4ade80',   // Light Green (per request)
-  dom: '#fb923c',        // Orange
-  event: '#f472b6',      // Pink
-  api: '#a855f7',        // Purple
-  input: '#eab308',      // Yellow
-  sink: '#ef4444',       // Red (Dangerous)
+  function: '#f59236ff',   // Purple
+  variable: '#edf1c4ff',   // Vibrant Blue
+  dom: '#a478f5ff',        // Violet
+  event: '#22d3ee',      // Cyan
+  api: '#fa6fb0ff',        // Indigo
+  input: '#35c935ff',      // Pink
+  sink: '#e02746ff',       // Rose (Dangerous but neon)
   sanitizer: '#10b981',  // Emerald (Safety)
 };
 
@@ -23,12 +23,4 @@ export const NODE_ICONS: Record<string, string> = {
   sanitizer: 'fa-broom',
 };
 
-export const PLACEHOLDER_CODE = `
-// Welcome to FlowCode AI!
-// Example of a potentially risky flow:
-function submitForm() {
-  const userInput = document.getElementById('search-box').value;
-  // Dangerous Sink: innerHTML
-  document.getElementById('results').innerHTML = "Results for: " + userInput;
-}
-`;
+export const PLACEHOLDER_CODE = ``;

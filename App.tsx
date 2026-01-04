@@ -48,7 +48,7 @@ const LoadingScreen: React.FC = () => {
       tx: Math.random() * width,
       ty: Math.random() * height,
       segments: [],
-      color: Math.random() > 0.5 ? '#ef4444' : '#ffffff' // Red or White
+       color: Math.random() > 0.5 ? '#3b82f6' : '#a855f7' // Blue or Purple
     });
 
     for (let i = 0; i < maxBugs; i++) bugs.push(createBug());
@@ -58,14 +58,14 @@ const LoadingScreen: React.FC = () => {
 
     const animate = () => {
       frame++;
-      // Clear with deep blue background
-      ctx.fillStyle = '#0f172a';
+    // Clear with deep black/navy background
+      ctx.fillStyle = '#05070a';
       ctx.fillRect(0, 0, width, height);
 
       // Gradient background overlay
       const grad = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, width);
-      grad.addColorStop(0, 'rgba(15, 23, 42, 0)');
-      grad.addColorStop(1, 'rgba(239, 68, 68, 0.05)');
+      grad.addColorStop(0, 'rgba(5, 7, 10, 0)');
+      grad.addColorStop(1, 'rgba(59, 130, 246, 0.03)');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);
 
@@ -104,9 +104,9 @@ const LoadingScreen: React.FC = () => {
           ctx.beginPath();
           ctx.moveTo(seg.x1, seg.y1);
           ctx.lineTo(seg.x2, seg.y2);
-          ctx.strokeStyle = bug.color === '#ef4444' ? `rgba(239, 68, 68, ${seg.opacity})` : `rgba(255, 255, 255, ${seg.opacity})`;
-          ctx.lineWidth = 1.5;
-          ctx.shadowBlur = 10 * seg.opacity;
+          ctx.strokeStyle = bug.color === '#3b82f6' ? `rgba(59, 130, 246, ${seg.opacity})` : `rgba(168, 85, 247, ${seg.opacity})`;
+          ctx.lineWidth = 2;
+          ctx.shadowBlur = 12 * seg.opacity;
           ctx.shadowColor = bug.color;
           ctx.stroke();
         });
@@ -142,17 +142,17 @@ const LoadingScreen: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 overflow-hidden">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#05070a]/95 overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
       
       <div className="relative z-10 flex flex-col items-center">
          {/* Advanced Animation Group */}
          <div className="relative w-48 h-48 mb-12 flex items-center justify-center">
             {/* Pulsing Back Glow */}
-            <div className="absolute w-32 h-32 bg-red-600/10 blur-3xl rounded-full animate-pulse"></div>
+            <div className="absolute w-32 h-32 bg-blue-600/10 blur-3xl rounded-full animate-pulse"></div>
             
             {/* Mechanical Outer Rings */}
-            <div className="absolute inset-0 border-t-2 border-l-2 border-red-500/30 rounded-[3.5rem] animate-[spin_4s_linear_infinite]"></div>
+            <div className="absolute inset-0 border-t-2 border-l-2 border-blue-500/30 rounded-[3.5rem] animate-[spin_4s_linear_infinite]"></div>
             <div className="absolute inset-4 border-b-2 border-r-2 border-slate-700 rounded-[2.5rem] animate-[spin_6s_linear_reverse_infinite]"></div>
             <div className="absolute inset-8 border-2 border-slate-800 border-dashed rounded-full animate-[spin_10s_linear_infinite]"></div>
 
@@ -163,16 +163,17 @@ const LoadingScreen: React.FC = () => {
                 {/* Searching Magnifier with orbit (Clockwise) */}
                 <div className="absolute w-28 h-28 animate-[spin_3s_linear_infinite]">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2">
-                        <i className="fas fa-search text-3xl text-red-500 drop-shadow-[0_0_12px_rgba(239,68,68,0.9)] animate-pulse"></i>
+                        <i className="fas fa-search text-[77px]  text-red-500 drop-shadow-[0_0_12px_rgba(239,68,68,0.9)] animate-pulse"></i>
                     </div>
                 </div>
 
                 {/* Bug Icon with orbit (Counter-Clockwise) */}
                 <div className="absolute w-36 h-36 animate-[spin_5s_linear_infinite_reverse]">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2">
-                        <i className="fas fa-bug text-xl text-red-400 opacity-80 rotate-[180deg]"></i>
+                        <i className="fas fa-bug text-xl text-red-400 opacity-80 rotate-[180deg]"></i> 
                     </div>
                 </div>
+                
             </div>
          </div>
 
@@ -321,16 +322,16 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-slate-950 text-slate-200 font-sans selection:bg-red-500/30 overflow-hidden">
+    <div className="flex h-screen bg-[#05070a] text-slate-200 font-sans selection:bg-blue-500/30 overflow-hidden">
       {/* Sidebar */}
-      <aside className="w-80 border-r border-slate-800/50 flex flex-col bg-slate-900/50 backdrop-blur-xl z-30 flex-shrink-0">
-        <div className="p-10 border-b border-slate-800/50 flex flex-col items-center">
-          <div className="w-16 h-16 rounded-2xl bg-slate-800/50 border border-slate-700/50 flex items-center justify-center shadow-2xl mb-6">
-            <i className="fas fa-user-secret text-red-500 text-2xl"></i>
+      <aside className="w-80 border-r border-blue-900/20 flex flex-col bg-[#0a0c14]/80 backdrop-blur-xl z-30 flex-shrink-0">
+        <div className="p-10 border-b border-blue-900/20 flex flex-col items-center">
+          <div className="w-16 h-16 rounded-2xl bg-blue-900/20 border border-blue-500/20 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.2)] mb-6 overflow-hidden">
+            <i className="fas fa-user-secret text-blue-500 text-2xl"></i>
           </div>
           <div className="text-center">
             <h1 className="text-2xl font-black text-white tracking-tighter uppercase italic">Bug Witcher</h1>
-            <p className="text-[10px] text-red-500 uppercase tracking-[0.4em] font-black mt-1">Static Code Analysis</p>
+            <p className="text-[10px] text-blue-400 uppercase tracking-[0.4em] font-black mt-1">Static Code Analysis</p>
           </div>
         </div>
 
@@ -339,10 +340,10 @@ const App: React.FC = () => {
           <section>
             <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4">Source Assets</h2>
             <div className="relative group mb-4">
-              <input type="file" multiple accept=".js,.html" onChange={handleFileUpload} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
-              <div className="p-6 border-2 border-dashed border-slate-700/50 rounded-2xl group-hover:border-blue-500/50 group-hover:bg-blue-500/5 transition-all flex flex-col items-center justify-center text-center">
-                <i className="fas fa-plus text-slate-600 mb-2 group-hover:text-blue-400"></i>
-                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Add Code</span>
+              <input type="file" multiple accept=".js,.html,.tsx,.ts,.php" onChange={handleFileUpload} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+              <div className="p-6 border-2 border-dashed border-blue-900/30 rounded-2xl group-hover:border-blue-500/50 group-hover:bg-blue-500/5 transition-all flex flex-col items-center justify-center text-center">
+                <i className="text-[25px] fas fa-cloud-upload-alt text-slate-600 mb-2 group-hover:text-red-600"></i>
+                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Feed me...</span>
               </div>
             </div>
             <div className="space-y-2">
@@ -422,11 +423,11 @@ const App: React.FC = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col overflow-hidden relative min-w-0">
+      <main className="flex-1 flex flex-col overflow-hidden relative min-w-0 bg-[#05070a]">
         {graphData && (
           <>
             {/* Tab Switcher */}
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 flex bg-slate-900/90 backdrop-blur-md p-1 rounded-2xl border border-slate-700/50 z-40 shadow-2xl">
+            <div className="absolute top-6 left-1/2 -translate-x-1/2 flex bg-slate-900/90 backdrop-blur-md p-1 rounded-2xl border border-blue-900/30 z-40 shadow-2xl">
               {[
                 { id: 'graph', icon: 'fa-project-diagram', label: 'Flow Map' },
                 { id: 'security', icon: 'fa-user-secret', label: 'Security Report' },
@@ -436,7 +437,7 @@ const App: React.FC = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
                   className={`px-6 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest flex items-center gap-2 transition-all ${
-                    activeTab === tab.id ? 'bg-red-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-200'
+                    activeTab === tab.id ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-200'
                   }`}
                 >
                   <i className={`fas ${tab.icon}`}></i> {tab.label}
@@ -546,29 +547,29 @@ const App: React.FC = () => {
         ) : (
           /* Empty State */
           <div className="flex-1 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/5 blur-[120px] rounded-full"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[120px] rounded-full"></div>
             <div className="relative mb-12">
               <div className="w-32 h-32 bg-slate-900 border border-slate-800 rounded-[3rem] flex items-center justify-center shadow-2xl">
-                <i className="fas fa-user-secret text-6xl text-red-500"></i>
+                <i className="fas fa-user-secret text-6xl text-blue-500"></i>
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-red-600 w-12 h-12 rounded-2xl flex items-center justify-center border-4 border-slate-950">
+              <div className="absolute -bottom-4 -right-4 bg-blue-600 w-12 h-12 rounded-2xl flex items-center justify-center border-4 border-slate-950">
                 <i className="fas fa-solid fa-bug text-white"></i>
               </div>
             </div>
-            <h2 className="text-5xl font-black text-white mb-6 tracking-tighter uppercase italic">Bug Witcher <br/><span className="text-red-500">Decoded by AI.</span></h2>
+            <h2 className="text-5xl font-black text-white mb-6 tracking-tighter uppercase italic">Bug Witcher <br/><span className="text-blue-500">Decoded by AI.</span></h2>
             <p className="text-slate-400 max-w-xl mb-12 text-lg font-medium leading-relaxed">Analyze JavaScript and HTML logic flows to uncover XSS entry points, dangerous sinks, and unauthorized data flow.</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl w-full">
               {[
                 { icon: 'fa-skull-crossbones', title: 'Sink Analysis', desc: 'Identify DOM injection points like innerHTML and script eval.' },
                 { icon: 'fa-shield-halved', title: 'Untrusted Flow', desc: 'Track how user-controlled data traverses through application logic.' },
                 { icon: 'fa-solid fa-bug', title: 'Audit Trail', desc: 'Detailed categorization of privileged functions and API usage.' }
               ].map((item, idx) => (
-                <div key={idx} className="p-10 rounded-[2.5rem] bg-slate-900/50 border border-slate-800 hover:border-red-500/30 transition-all group">
-                  <div className="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-500/10 transition-all">
-                    <i className={`fas ${item.icon} text-slate-500 group-hover:text-red-500`}></i>
+                <div key={idx} className="p-2 rounded-[2.5rem] bg-slate-900/50 border border-slate-800">
+                  <div className="w-15 h-5 bg-slate-800 rounded-2xl flex items-center justify-center mb-2">
+                    <i className={`fas ${item.icon} text-slate-500`}></i>
                   </div>
-                  <h3 className="text-white font-black mb-3 uppercase text-[10px] tracking-[0.2em]">{item.title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed font-medium">{item.desc}</p>
+                  <h3 className="text-white font-black mb-3 uppercase text-[12px] tracking-[0.2em]">{item.title}</h3>
+                  <p className="text-xm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
                 </div>
               ))}
             </div>
