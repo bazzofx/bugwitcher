@@ -42,3 +42,10 @@ The app combines **advanced visualization** with an **AI-assisted code flow audi
 2. Set the `DEEPSEEK_API_KEY` in [.env.local](.env.local) to your DeepSeek API key
 3. Run the app:
    `npm run dev`
+
+   ## Run on Docker
+1. Build the image
+`docker build -t bugwitcher --build-arg API_KEY=$API_KEY .`
+2. Deploy docker instance
+`docker run -d --name bugwitcher -p 127.0.0.1:3020:3020 bugwitcher`
+
