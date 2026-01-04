@@ -35,9 +35,9 @@ RUN npm install --force  2>/dev/null
 
 # Set environment variable for API key
 ARG API_KEY
-ENV ABUSEIPDB_API_KEY=${API_KEY}
+ENV VITE_DEEPSEEK_API_KEY=${API_KEY}
 # Create .env.local file with API_KEY
-RUN echo "ABUSEIPDB_API_KEY=${API_KEY}" > .env.local
+RUN echo "VITE_DEEPSEEK_API_KEY=${API_KEY}" > .env.local
 
 # Expose necessary ports
 EXPOSE 3020
