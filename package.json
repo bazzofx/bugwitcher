@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --port 3020 --host",
     "build": "vite build",
-    "preview": "vite preview --port 3020 --host"
+    "preview": "vite preview -- --port 3020 --host"
   },
   "dependencies": {
     "react": "^19.2.3",
