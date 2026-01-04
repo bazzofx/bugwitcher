@@ -326,24 +326,27 @@ const App: React.FC = () => {
       {/* Sidebar */}
       <aside className="w-80 border-r border-blue-900/20 flex flex-col bg-[#0a0c14]/80 backdrop-blur-xl z-30 flex-shrink-0">
         <div className="p-10 border-b border-blue-900/20 flex flex-col items-center">
-          <div className="w-16 h-16 rounded-2xl bg-blue-900/20 border border-blue-500/20 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.2)] mb-6 overflow-hidden">
-            <i className="fas fa-user-secret text-blue-500 text-2xl"></i>
+          <div className="w-16 h-16 rounded-2xl flex items-center justify-center  mb-6 overflow-hidden -mt-2">
+            {/* <i className="fas fa-user-secret text-blue-500 text-2xl"></i> */}
+            <i className=""> <img src="/src/images/icon.ico" alt="" style={{ width: "60px", height: "60px" }} /></i>
           </div>
-          <div className="text-center">
-            <h1 className="text-2xl font-black text-white tracking-tighter uppercase italic">Bug Witcher</h1>
-            <p className="text-[10px] text-blue-400 uppercase tracking-[0.4em] font-black mt-1">Static Code Analysis</p>
+          <div className="text-center -mt-6">
+<h1 className="text-3xl font-black text-white tracking-tighter uppercase italic">  Bug Witcher</h1>
+<h1 className="text-[16px] font-black text-white tracking-tighter uppercase italic text-blue-400 -mt-2">  Static Code Analysis</h1>
+            {/* <h1 className="text-[10px] text-blue-400 uppercase tracking-[0.4em] font-black mt-1">Static Code Analysis</h1> */}
+
           </div>
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar min-h-0">
           {/* Files Section */}
           <section>
-            <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4">Source Assets</h2>
+            <h2 className="text-[13px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4">Source Assets</h2>
             <div className="relative group mb-4">
               <input type="file" multiple accept=".js,.html,.tsx,.ts,.php" onChange={handleFileUpload} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
               <div className="p-6 border-2 border-dashed border-blue-900/30 rounded-2xl group-hover:border-blue-500/50 group-hover:bg-blue-500/5 transition-all flex flex-col items-center justify-center text-center">
                 <i className="text-[25px] fas fa-cloud-upload-alt text-slate-600 mb-2 group-hover:text-red-600"></i>
-                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Feed me...</span>
+                <span className="text-[11px] text-slate-700 font-bold uppercase tracking-wider">Feed me...</span>
               </div>
             </div>
             <div className="space-y-2">
@@ -549,14 +552,15 @@ const App: React.FC = () => {
           <div className="flex-1 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[120px] rounded-full"></div>
             <div className="relative mb-12">
-              <div className="w-32 h-32 bg-slate-900 border border-slate-800 rounded-[3rem] flex items-center justify-center shadow-2xl">
-                <i className="fas fa-user-secret text-6xl text-blue-500"></i>
+              <div className="w-32 h-32 rounded-[3rem] flex items-center justify-center shadow-2xl">
+                {/* <i className="fas fa-user-secret text-6xl text-blue-500"></i> */}
+                <i> <img src="/src/images/icon.ico" alt="" /></i>
               </div>
               <div className="absolute -bottom-4 -right-4 bg-blue-600 w-12 h-12 rounded-2xl flex items-center justify-center border-4 border-slate-950">
                 <i className="fas fa-solid fa-bug text-white"></i>
               </div>
             </div>
-            <h2 className="text-5xl font-black text-white mb-6 tracking-tighter uppercase italic">Bug Witcher <br/><span className="text-blue-500">Decoded by AI.</span></h2>
+            <h2 className="text-5xl font-black text-white mb-6 tracking-tighter uppercase italic">Bug Witcher <br/><span className="text-blue-500">Static Code Analysis.</span></h2>
             <p className="text-slate-400 max-w-xl mb-12 text-lg font-medium leading-relaxed">Analyze JavaScript and HTML logic flows to uncover XSS entry points, dangerous sinks, and unauthorized data flow.</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl w-full">
               {[
@@ -564,14 +568,22 @@ const App: React.FC = () => {
                 { icon: 'fa-shield-halved', title: 'Untrusted Flow', desc: 'Track how user-controlled data traverses through application logic.' },
                 { icon: 'fa-solid fa-bug', title: 'Audit Trail', desc: 'Detailed categorization of privileged functions and API usage.' }
               ].map((item, idx) => (
-                <div key={idx} className="p-2 rounded-[2.5rem] bg-slate-900/50 border border-slate-800">
-                  <div className="w-15 h-5 bg-slate-800 rounded-2xl flex items-center justify-center mb-2">
-                    <i className={`fas ${item.icon} text-slate-500`}></i>
+                <div key={idx} className="p-2 rounded-[2.5rem] bg-slate-900/20 border border-slate-800">
+                  <div className="w-15 h-5 rounded-2xl flex items-center justify-center mb-2">
+                    <i className={`fas ${item.icon} text-blue-500`}></i>
                   </div>
                   <h3 className="text-white font-black mb-3 uppercase text-[12px] tracking-[0.2em]">{item.title}</h3>
                   <p className="text-xm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
                 </div>
               ))}
+            </div>
+            {/* Footer */}
+                        <div>
+    <footer className="fixed bottom-0 left-0 w-full bg-black-300 p-2">
+      <h3 className="text-xs text-slate-500 text-right pr-4">
+        Created by ~ <span className=" fas fa-solid fa-user-ninja"> ~ </span> <a href="https://cybersamurai.co.uk">CyberSamurai - 2026 ~ version 1.0</a>
+      </h3>
+</footer>
             </div>
           </div>
         )}
