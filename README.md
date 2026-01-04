@@ -1,5 +1,5 @@
 <div>
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/bazzofx/bugwitcher/blob/main/src/images/banner.png" />
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/bazzofx/bugwitcher/blob/main/public/images/banner.png" />
 </div>
 
 # Bug Witcher
