@@ -331,7 +331,20 @@ const App: React.FC = () => {
             <i className=""> <img src="/src/images/icon.ico" alt="" style={{ width: "60px", height: "60px" }} /></i>
           </div>
           <div className="text-center -mt-6">
-<h1 className="text-3xl font-black text-white tracking-tighter uppercase italic">  Bug Witcher</h1>
+{/* Title on Sidebar */}
+{/* <h1 className="text-3xl font-black text-white tracking-tighter uppercase italic">  Bug Witcher</h1>
+<span className="absolute top-20 left-22 text-[22px] fas fa-solid fa-bug text-white"></span> */}
+
+<div className="relative inline-block">
+  {/* Icon positioned above */}
+  <span className="absolute -top-2.5 right-6 transform -translate-x-1/2 text-[25px] fas fa-bug text-white"></span>
+
+  {/* The H1 text */}
+  <h1 className="text-3xl font-black text-white tracking-tighter uppercase italic">
+    Bug Witcher
+  </h1>
+</div>
+
 <h1 className="text-[16px] font-black text-white tracking-tighter uppercase italic text-blue-400 -mt-2">  Static Code Analysis</h1>
             {/* <h1 className="text-[10px] text-blue-400 uppercase tracking-[0.4em] font-black mt-1">Static Code Analysis</h1> */}
 
@@ -552,13 +565,14 @@ const App: React.FC = () => {
           <div className="flex-1 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[120px] rounded-full"></div>
             <div className="relative mb-12">
-              <div className="w-32 h-32 rounded-[3rem] flex items-center justify-center shadow-2xl">
+              <div className="w-320 h-320 rounded-[3rem] flex items-center justify-center shadow-2xl">
                 {/* <i className="fas fa-user-secret text-6xl text-blue-500"></i> */}
-                <i> <img src="/src/images/icon.ico" alt="" /></i>
+                <i className="-m-10"> <img src="/src/images/bugwitcher_bigv2.png" alt="" style={{ width: "150px", height: "150px" }}/></i>
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-blue-600 w-12 h-12 rounded-2xl flex items-center justify-center border-4 border-slate-950">
-                <i className="fas fa-solid fa-bug text-white"></i>
+              <div className="absolute -bottom-12 -right-12 bg-blue-600 w-1 h-1 rounded-2xl flex items-center justify-center border-4 border-slate-950">
+                <i className="text-[43px] fas fa-solid fa-bug text-white"></i>
               </div>
+              
             </div>
             <h2 className="text-5xl font-black text-white mb-6 tracking-tighter uppercase italic">Bug Witcher <br/><span className="text-blue-500">Static Code Analysis.</span></h2>
             <p className="text-slate-400 max-w-xl mb-12 text-lg font-medium leading-relaxed">Analyze JavaScript and HTML logic flows to uncover XSS entry points, dangerous sinks, and unauthorized data flow.</p>
