@@ -3,7 +3,8 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { FileData, GraphData, GraphNode } from './types';
 import { analyzeCodeFlow } from './services/geminiService';
 import GraphVisualizer from './components/GraphVisualizer';
-
+// import buglogo from './images/bugwitcher_bigv2.png';
+// import bugicon from './images/icon.ico';
 /**
  * Advanced Loading Component
  * Features a Canvas-based lightning-bug animation and a central searching indicator.
@@ -328,7 +329,7 @@ const App: React.FC = () => {
         <div className="p-10 border-b border-blue-900/20 flex flex-col items-center">
           <div className="w-16 h-16 rounded-2xl flex items-center justify-center  mb-6 overflow-hidden -mt-2">
             {/* <i className="fas fa-user-secret text-blue-500 text-2xl"></i> */}
-            <i className=""> <img src="/src/images/icon.ico" alt="" style={{ width: "60px", height: "60px" }} /></i>
+            <i className=""> <img src="/images/icon.ico" alt="" style={{ width: "60px", height: "60px" }} /></i>
           </div>
           <div className="text-center -mt-6">
 {/* Title on Sidebar */}
@@ -567,7 +568,7 @@ const App: React.FC = () => {
             <div className="relative mb-12">
               <div className="w-320 h-320 rounded-[3rem] flex items-center justify-center shadow-2xl">
                 {/* <i className="fas fa-user-secret text-6xl text-blue-500"></i> */}
-                <i className="-m-10"> <img src="/src/images/bugwitcher_bigv2.png" alt="" style={{ width: "150px", height: "150px" }}/></i>
+                <i className="-m-10"> <img src="/images/logo.png" alt="" style={{ width: "150px", height: "150px" }}/></i>
               </div>
               <div className="absolute -bottom-12 -right-12 bg-blue-600 w-1 h-1 rounded-2xl flex items-center justify-center border-4 border-slate-950">
                 <i className="text-[43px] fas fa-solid fa-bug text-white"></i>
