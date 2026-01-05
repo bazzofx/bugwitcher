@@ -242,7 +242,7 @@ const App: React.FC = () => {
     setActiveTab('graph');
     setSelectedFileIndex(0);
   };
-  const maxChars = 50000;
+  const maxChars = 120000;
   
   const startAnalysis = async () => {
     if (files.length === 0) {
