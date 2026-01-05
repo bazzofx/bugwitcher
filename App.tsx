@@ -183,12 +183,12 @@ const LoadingScreen: React.FC = () => {
             <div className="flex flex-col items-center gap-1">
                 <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                    <span className="text-[10px] font-black text-red-500 uppercase tracking-[0.3em]">Bug Bleach mapping in progress</span>
+                    <span className="text-[10px] font-black text-red-500 uppercase tracking-[0.3em]">Bug Witcher mapping in progress...</span>
                 </div>
                 <span className="text-[10px] font-mono text-slate-500 uppercase">Tracing untrusted entry points...</span>
             </div>
             <p className="text-slate-500 text-[11px] font-medium leading-relaxed px-8">
-                The powers of AI are performing a virtual machine sacrifice ritual to help you identify function call stacks and potentially juicy bugs and data sinks.
+                The powers of AI are performing a virtual machine sacrifice ritual to help you identify function call stacks, potentially juicy bugs and data sinks.
             </p>
          </div>
       </div>
