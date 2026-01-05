@@ -39,7 +39,7 @@ The app combines **advanced visualization** with an **AI-assisted code flow audi
 **Prerequisites:**  Node.js
 1. Install dependencies:
    `npm install`
-2. Set the `DEEPSEEK_API_KEY` in [.env.local](.env.local) to your DeepSeek API key
+2. Set the `VITE_DEEPSEEK_API_KEY` in [.env.local](.env.local) to your DeepSeek API key
 3. Run the app:
    `npm run dev`
 
